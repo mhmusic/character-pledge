@@ -1,4 +1,4 @@
-# My Character Pledge & Declaration
+# The Character Pledge
 
 A one-page pledge for creators: who you are, what you make, and how you're known — kept in your own hands and shared the way you choose.
 
