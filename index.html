@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Character Pledge &amp; Declaration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F5F2;
+    --ink:#1C2230;
+    --ink-soft:#4B5563;
+    --rule:#C7CBD1;
+    --pen:#1E3FAF;
+    --pen-soft:#E3E8F7;
+    --ok:#1F6B3A;
+    --field:#FFFFFF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141820;
+      --ink:#ECEEF1;
+      --ink-soft:#A3ABB8;
+      --rule:#343B48;
+      --pen:#8EA4F2;
+      --pen-soft:#1E2740;
+      --ok:#7AC79A;
+      --field:#1B2130;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141820;
+    --ink:#ECEEF1;
+    --ink-soft:#A3ABB8;
+    --rule:#343B48;
+    --pen:#8EA4F2;
+    --pen-soft:#1E2740;
+    --ok:#7AC79A;
+    --field:#1B2130;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Times New Roman",serif;
+    font-size:19px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:38rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+  header{padding-top:1rem}
+  h1{
+    font-weight:500;
+    font-size:clamp(2.4rem,7vw,3.4rem);
+    line-height:1.02;
+    letter-spacing:-.01em;
+    margin:0 0 .6rem;
+  }
+  .under{
+    font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;
+    font-size:.95rem;
+    color:var(--ink-soft);
+    margin:0 0 2.5rem;
+  }
+  .count{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    display:flex;align-items:baseline;gap:.6rem;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--rule);
+    padding:1rem 0;
+    margin:0 0 2.5rem;
+  }
+  .count b{font-size:2.2rem;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+  .count span{color:var(--ink-soft);font-size:.95rem}
+
+  .pledge p{margin:0 0 1.1rem}
+  .pledge .lede{font-size:1.25rem;line-height:1.45;margin-bottom:1.8rem}
+  .clause{margin:0 0 1.6rem}
+  .clause h2{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-weight:600;font-size:.9rem;
+    color:var(--ink-soft);
+    margin:0 0 .35rem;
+  }
+  .clause p{margin:0}
+  .placeholder{color:var(--ink-soft);font-style:italic}
+
+  /* The signature block is the one loud thing on the page. */
+  .sign{
+    margin-top:3rem;
+    padding:1.6rem 1.25rem 1.4rem;
+    border:1.5px solid var(--ink);
+    border-radius:4px;
+    background:var(--field);
+  }
+  .sign h2{
+    font-family:"Newsreader",serif;font-weight:500;
+    font-size:1.5rem;margin:0 0 .25rem;line-height:1.15;
+  }
+  .sign .you{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    color:var(--ink-soft);font-size:.95rem;margin:0 0 1.4rem;
+  }
+  label{
+    display:block;
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.9rem;color:var(--ink-soft);margin:0 0 .3rem;
+  }
+  .field{margin-bottom:1.1rem}
+  input[type=text],input[type=email]{
+    width:100%;
+    font-family:"Newsreader",serif;font-size:1.25rem;
+    color:var(--ink);
+    background:transparent;
+    border:0;border-bottom:1px solid var(--ink);
+    padding:.35rem 0 .45rem;
+    outline:none;border-radius:0;
+  }
+  input[type=text]:focus,input[type=email]:focus{border-bottom:2px solid var(--pen)}
+  input#name{
+    font-size:1.75rem;
+    color:var(--pen);
+    font-style:italic;
+  }
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media (max-width:480px){.row{grid-template-columns:1fr}}
+  .choice{
+    display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.2rem;
+  }
+  .choice input{position:absolute;opacity:0;width:0;height:0}
+  .choice span{
+    font-family:"Instrument Sans",system-ui,sans-serif;font-size:.9rem;
+    padding:.4rem .8rem;border:1px solid var(--rule);border-radius:999px;
+    cursor:pointer;color:var(--ink);
+  }
+  .choice input:checked + span{border-color:var(--pen);background:var(--pen-soft);color:var(--ink)}
+  .choice input:focus-visible + span{outline:2px solid var(--pen);outline-offset:2px}
+  .check{
+    display:flex;gap:.6rem;align-items:flex-start;
+    font-family:"Instrument Sans",system-ui,sans-serif;font-size:.9rem;
+    color:var(--ink);margin:.2rem 0 1.4rem;
+  }
+  .check input{margin-top:.2rem;accent-color:var(--pen)}
+  button{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:1.05rem;font-weight:600;
+    background:var(--ink);color:var(--paper);
+    border:0;border-radius:4px;
+    padding:.85rem 1.4rem;cursor:pointer;
+    width:100%;
+  }
+  button:hover{background:var(--pen)}
+  button:focus-visible{outline:2px solid var(--pen);outline-offset:3px}
+  button[disabled]{opacity:.6;cursor:default}
+  .fine{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.85rem;color:var(--ink-soft);margin:.9rem 0 0;line-height:1.45;
+  }
+  .done{display:none;padding:.4rem 0 0}
+  .done p{margin:0 0 .6rem}
+  .done .big{font-size:1.5rem;line-height:1.2}
+  .sign.signed form{display:none}
+  .sign.signed .done{display:block}
+  .err{
+    display:none;
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.9rem;color:#B3261E;margin:.6rem 0 0;
+  }
+
+  .names{margin-top:3rem}
+  .names h2{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-weight:600;font-size:.9rem;color:var(--ink-soft);margin:0 0 .6rem;
+  }
+  .names ol{
+    list-style:none;margin:0;padding:0;
+    columns:2;column-gap:2rem;
+  }
+  @media (max-width:480px){.names ol{columns:1}}
+  .names li{
+    break-inside:avoid;
+    padding:.35rem 0;border-bottom:1px solid var(--rule);
+    font-size:1.05rem;
+  }
+  .names li small{
+    display:block;
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.8rem;color:var(--ink-soft);
+  }
+  .names .empty{color:var(--ink-soft);font-style:italic;border:0}
+
+  footer{
+    margin-top:3.5rem;
+    padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.9rem;color:var(--ink-soft);
+  }
+  footer p{margin:0 0 .5rem}
+  a{color:var(--pen);text-decoration-thickness:1px;text-underline-offset:3px}
+  @media (prefers-reduced-motion:no-preference){
+    .sign.signed .done{animation:in .35s ease-out}
+    @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>My Character Pledge &amp; Declaration</h1>
+    <p class="under">A one-page pledge for creators. It is a declaration of who you are, what you make, and how you're known — kept in your own hands and shared the way you choose.</p>
+  </header>
+
+  <section class="pledge">
+    <p class="lede">My Character is all of me: the sum of all my parts, standing on a foundation. It is not only something I have. It is something I give.</p>
+
+    <div class="clause">
+      <h2>What is mine</h2>
+      <p>My name, my face, my voice, and the way I am known. Tennessee already says so. My taste, my opinions, the way I see things and the way I do things. These are mine too. Nobody has to give them to me. I already hold them.</p>
+    </div>
+
+    <div class="clause">
+      <h2>What I give</h2>
+      <p>I can share any of it when I choose to, with whom I choose, for what I choose, and I can change my mind. Signing this page gives nothing away. Each yes is its own. I can take it back.</p>
+    </div>
+
+    <div class="clause">
+      <h2>What I ask of anyone who learns from me</h2>
+      <p>Tell me. Do not pass anything about me or anything of mine along without telling me. I believe every person has the last word on what is shared about them. That holds for anything about me — my preferences, my habits — and anything I create: a song, a film, a script, a performance, an image, a design, my voice, my likeness, my name.</p>
+    </div>
+
+    <div class="clause">
+      <h2>What I keep</h2>
+      <p>The last word on my work, my story, and my name stays with me, whether I use these tools every day or never touch them. No abuse. No neglect. No oppression.</p>
+    </div>
+
+    <div class="clause">
+      <h2>Character</h2>
+      <p>I sign this for the people whose voices I would fight for, and then for myself. One name changes nothing. Enough names and we change the rules.</p>
+    </div>
+  </section>
+
+  <section class="sign" id="signBlock">
+    <h2>Sign it</h2>
+    <p class="you">Your name, in your own hand.</p>
+
+    <form id="form" autocomplete="off">
+      <div class="field">
+        <label for="name">Printed name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="city">City, state <span style="opacity:.7">(optional)</span></label>
+          <input type="text" id="city" name="city">
+        </div>
+        <div class="field">
+          <label for="email">Email <span style="opacity:.7">(optional)</span></label>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>I'm signing as</label>
+        <div class="choice" id="as">
+          <label><input type="radio" name="as" value="Music" required><span>Music</span></label>
+          <label><input type="radio" name="as" value="Film / video"><span>Film / video</span></label>
+          <label><input type="radio" name="as" value="Writing / performance"><span>Writing / performance</span></label>
+          <label><input type="radio" name="as" value="Design / craft"><span>Design / craft</span></label>
+          <label><input type="radio" name="as" value="I stand with them"><span>I stand with them</span></label>
+        </div>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="showName">
+        <span>Show my name publicly. Leave it unchecked and you are still counted, just not shown.</span>
+      </label>
+
+      <button type="submit" id="submit">Sign the pledge</button>
+      <p class="err" id="err"></p>
+      <p class="fine">Signing gives nothing away. Each yes is its own, and you can take it back. Your email is never shown, sold, or shared — it is only how you would be reached to remove your name.</p>
+    </form>
+
+    <div class="done">
+      <p class="big" id="thanks">Signed.</p>
+      <p class="fine">To have your name removed at any time, email <a id="contact2" href="mailto:mark@markhaffner.com">mark@markhaffner.com</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Building Character. Building Yes.</p>
+    <p>Stewarded by <a href="https://markhaffnermusic.com">Mark Haffner</a>, adjunct professor, Volunteer State Community College. Questions or removals: <a href="mailto:mark@markhaffner.com">mark@markhaffner.com</a></p>
+  </footer>
+
+</div>
+
+
+<script>
+(function(){
+  // GitHub Pages is static: signatures post to a form service.
+  // 1. Make a free form at https://tally.so or https://formspree.io
+  // 2. Paste its endpoint URL below.
+  var ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxxx"
+
+  var signBlock = document.getElementById("signBlock");
+  var form = document.getElementById("form");
+  var err = document.getElementById("err");
+  var submit = document.getElementById("submit");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    err.style.display = "none";
+    var name = document.getElementById("name").value.trim();
+    var asEl = form.querySelector('input[name="as"]:checked');
+    if (!name){ err.textContent = "A name is needed."; err.style.display = "block"; return; }
+    if (!asEl){ err.textContent = "Pick one line to sign as."; err.style.display = "block"; return; }
+
+    var sig = {
+      name: name,
+      city: document.getElementById("city").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      signingAs: asEl.value,
+      showName: document.getElementById("showName").checked ? "yes" : "count me only"
+    };
+
+    if (!ENDPOINT){
+      err.textContent = "Signing isn't wired up yet. Email mark@markhaffner.com and your name will be added.";
+      err.style.display = "block";
+      return;
+    }
+
+    submit.disabled = true;
+    submit.textContent = "Signing\u2026";
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(sig)
+    }).then(function(r){
+      if (!r.ok) throw new Error("bad response");
+      document.getElementById("thanks").textContent = "Signed, " + name.split(" ")[0] + ".";
+      signBlock.classList.add("signed");
+    }).catch(function(){
+      err.textContent = "That didn't go through. Email mark@markhaffner.com and your name will be added.";
+      err.style.display = "block";
+      submit.disabled = false;
+      submit.textContent = "Sign the pledge";
+    });
+  });
+})();
+</script>
+</body>
+</html>
