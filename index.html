@@ -200,6 +200,35 @@
   }
   footer p{margin:0 0 .5rem}
   a{color:var(--pen);text-decoration-thickness:1px;text-underline-offset:3px}
+  .why{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:1rem;line-height:1.6;
+    color:var(--ink-soft);
+    border-left:2px solid var(--rule);
+    padding:0 0 0 1.1rem;
+    margin:0 0 2.6rem;
+  }
+  .why p{margin:0 0 .8rem}
+  .why p:last-child{margin:0}
+
+  .faq{margin-top:2.6rem}
+  .faq h2{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-weight:600;font-size:.9rem;color:var(--ink-soft);
+    margin:0 0 1rem;
+  }
+  .faq dl{margin:0}
+  .faq dt{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-weight:600;font-size:.95rem;
+    margin:0 0 .25rem;
+  }
+  .faq dd{
+    margin:0 0 1.2rem;
+    font-size:1.02rem;line-height:1.5;
+    color:var(--ink-soft);
+  }
+
   @media (prefers-reduced-motion:no-preference){
     .sign.signed .done{animation:in .35s ease-out}
     @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
@@ -213,6 +242,11 @@
     <h1>My Character Pledge &amp; Declaration</h1>
     <p class="under">A one-page pledge for creators. It is a declaration of who you are, what you make, and how you're known — kept in your own hands and shared the way you choose.</p>
   </header>
+
+  <div class="why">
+    <p>Nobody asked. That is the whole of it. The machines that now write songs and make voices learned from work that people made, and no one was told, paid, or given the chance to say no.</p>
+    <p>The law is starting to catch up — Tennessee's ELVIS Act was first. But a law says what others cannot do to you. It does not say what you want. This page is where you say it, in your own words, before anyone else describes you.</p>
+  </div>
 
   <section class="pledge">
     <p class="lede">My Character is all of me: the sum of all my parts, standing on a foundation. It is not only something I have. It is something I give.</p>
@@ -291,9 +325,29 @@
     </div>
   </section>
 
+  <section class="faq">
+    <h2>Before you sign</h2>
+    <dl>
+      <dt>Does signing give anything away?</dt>
+      <dd>No. It licenses nothing and grants nothing to anyone, including me. It is a statement of what you already hold.</dd>
+
+      <dt>Is it legally binding?</dt>
+      <dd>No. It is a public declaration, not a contract. Its weight is in numbers, and in what it makes hard to do quietly.</dd>
+
+      <dt>What happens to my name?</dt>
+      <dd>Nothing, unless you check the box. Your email is never shown, sold, or shared — it is only how you would be reached to remove your name, which takes one message.</dd>
+
+      <dt>Do I have to be against AI to sign?</dt>
+      <dd>No. Signers include people who use these tools every day and people who never will. This is about consent, not about tools.</dd>
+
+      <dt>Who is behind this?</dt>
+      <dd>One person. I am Mark Haffner, a composer and producer in Nashville who teaches entertainment business. There is no company, no funding, and nothing for sale here. I wrote this because I wanted to sign it myself.</dd>
+    </dl>
+  </section>
+
   <footer>
     <p>Building Character. Building Yes.</p>
-    <p>Stewarded by <a href="https://markhaffnermusic.com">Mark Haffner</a>. Questions or removals: <a href="mailto:character@markhaffnermusic.com">character@markhaffnermusic.com</a></p>
+    <p>Stewarded by <a href="https://markhaffnermusic.com">Mark Haffner</a>, adjunct professor, Volunteer State Community College. Questions or removals: <a href="mailto:character@markhaffnermusic.com">character@markhaffnermusic.com</a></p>
   </footer>
 
 </div>
