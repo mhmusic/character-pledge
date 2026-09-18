@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Show That You Signed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F5F2;
+    --ink:#1C2230;
+    --ink-soft:#4B5563;
+    --rule:#C7CBD1;
+    --pen:#1E3FAF;
+    --pen-soft:#E3E8F7;
+    --field:#FFFFFF;
+    --code:#EDEFEA;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141820;
+      --ink:#ECEEF1;
+      --ink-soft:#A3ABB8;
+      --rule:#343B48;
+      --pen:#8EA4F2;
+      --pen-soft:#1E2740;
+      --field:#1B2130;
+      --code:#1B2130;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141820;
+    --ink:#ECEEF1;
+    --ink-soft:#A3ABB8;
+    --rule:#343B48;
+    --pen:#8EA4F2;
+    --pen-soft:#1E2740;
+    --field:#1B2130;
+    --code:#1B2130;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Times New Roman",serif;
+    font-size:19px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:38rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+  header{padding-top:1rem}
+  h1{
+    font-weight:500;
+    font-size:clamp(2.1rem,6vw,2.9rem);
+    line-height:1.05;
+    letter-spacing:-.01em;
+    margin:0 0 .6rem;
+  }
+  .under{
+    font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;
+    font-size:.95rem;
+    color:var(--ink-soft);
+    margin:0 0 2.5rem;
+  }
+  h2{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-weight:600;font-size:.9rem;
+    color:var(--ink-soft);
+    margin:2.6rem 0 .6rem;
+  }
+  p{margin:0 0 1.1rem}
+  .preview{
+    background:var(--field);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:1.4rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.2rem;
+    align-items:center;
+    margin-bottom:1.2rem;
+  }
+  .preview.dark{background:#141820;border-color:#343B48}
+  .preview img{max-width:100%;height:auto}
+
+  .snippet{position:relative;margin:0 0 1.1rem}
+  pre{
+    background:var(--code);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:1rem 1rem 1rem;
+    margin:0;
+    overflow-x:auto;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.78rem;
+    line-height:1.6;
+    color:var(--ink);
+    white-space:pre-wrap;
+    word-break:break-all;
+  }
+  button{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.82rem;font-weight:600;
+    background:var(--ink);color:var(--paper);
+    border:0;border-radius:3px;
+    padding:.4rem .75rem;cursor:pointer;
+    margin-top:.5rem;
+  }
+  button:hover{background:var(--pen)}
+  button:focus-visible{outline:2px solid var(--pen);outline-offset:2px}
+
+  ul{margin:0 0 1.1rem;padding-left:1.1rem}
+  li{margin:0 0 .5rem}
+  .note{
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.88rem;color:var(--ink-soft);line-height:1.5;
+  }
+  footer{
+    margin-top:3.5rem;
+    padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:.9rem;color:var(--ink-soft);
+  }
+  footer p{margin:0 0 .5rem}
+  a{color:var(--pen);text-decoration-thickness:1px;text-underline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Show that you signed</h1>
+    <p class="under">Put it on your site, your press kit, your profile, your email. One line of code, or none at all.</p>
+  </header>
+
+  <p>Signing is a private act until somebody sees it. A badge on your own page does more than a name on a list here — it tells the people who visit you, on your ground, what you expect of anyone who learns from your work.</p>
+
+  <h2>The badge</h2>
+
+  <div class="preview">
+    <img src="badge.svg" alt="Signed: The Character Pledge" width="256" height="64">
+  </div>
+  <div class="preview dark">
+    <img src="badge-dark.svg" alt="Signed: The Character Pledge" width="256" height="64">
+  </div>
+
+  <h2>For a website</h2>
+  <p class="note">Paste this wherever you can add HTML — a footer, an about page, a sidebar. Use <code>badge-dark.svg</code> instead if your site has a dark background.</p>
+  <div class="snippet">
+<pre id="s1">&lt;a href="https://character.markhaffnermusic.com"&gt;&lt;img
+  src="https://character.markhaffnermusic.com/badge.svg"
+  alt="Signed: The Character Pledge" width="256" height="64"&gt;&lt;/a&gt;</pre>
+    <button data-copy="s1">Copy</button>
+  </div>
+
+  <h2>For a bio, a profile, or an email signature</h2>
+  <p class="note">Anywhere that takes plain text: Bandcamp, Spotify for Artists, LinkedIn, the bottom of your emails.</p>
+  <div class="snippet">
+<pre id="s2">I've signed The Character Pledge — character.markhaffnermusic.com</pre>
+    <button data-copy="s2">Copy</button>
+  </div>
+
+  <h2>If you can't paste code</h2>
+  <ul>
+    <li><strong>Squarespace, Wix, or Weebly:</strong> add an Image block, upload the badge file, and set its link to <em>character.markhaffnermusic.com</em>.</li>
+    <li><strong>Bandcamp, Instagram, or anywhere with a bio field:</strong> use the plain-text line above.</li>
+    <li><strong>A press kit or one-sheet:</strong> drop the badge image into the layout like any other logo.</li>
+  </ul>
+  <p class="note">Right-click either badge above and choose Save Image to download it.</p>
+
+  <h2>Using it honestly</h2>
+  <p>Use the badge if you've signed, and take it down if you change your mind. It says one thing: that you've stated where you stand. It doesn't claim a license, a contract, or anything about who you work with.</p>
+
+  <footer>
+    <p><a href="./">← The Character Pledge</a></p>
+    <p>Building Character. Building Yes.</p>
+    <p>Stewarded by <a href="https://markhaffnermusic.com">Mark Haffner</a>. Questions: <a href="mailto:character@markhaffnermusic.com">character@markhaffnermusic.com</a></p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll("button[data-copy]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var el = document.getElementById(b.getAttribute("data-copy"));
+      var text = el.innerText;
+      var done = function(){
+        var old = b.textContent;
+        b.textContent = "Copied";
+        setTimeout(function(){ b.textContent = old; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    });
+  });
+  function fallback(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); } catch(e){}
+    document.body.removeChild(ta);
+  }
+})();
+</script>
+</body>
+</html>
